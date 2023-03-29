@@ -1,44 +1,32 @@
 package br.com.jonathan.appium;
 
 import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.concurrent.TimeUnit;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.remote.DesiredCapabilities;
 
+import br.com.jonathan.appium.core.DriverFactory;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.remote.MobileCapabilityType;
 import junit.framework.Assert;
 
 public class FormularioTeste {
 	private AndroidDriver<MobileElement> driver;
 	
 	@Before
-	private void inicializarAppium() throws MalformedURLException {
-		DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
-	    desiredCapabilities.setCapability("platformName", "Android");
-	    desiredCapabilities.setCapability("appium:deviceName", "emulator-5554");
-	    desiredCapabilities.setCapability("appium:automationName", "uiautomator2");
-	    //desiredCapabilities.setCapability("appium:appPackage", "com.google.android.calculator");
-	    //desiredCapabilities.setCapability("appium:appActivity", "com.android.calculator2.Calculator");
-	    desiredCapabilities.setCapability(MobileCapabilityType.APP, "\\Users\\Jonathan\\eclipse-workspace\\CursoAppium\\src\\main\\resources\\CTAppium_2_0.apk");
-	    
-	    driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), desiredCapabilities);
-	    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	public void inicializarAppium() throws MalformedURLException {
+		driver = DriverFactory.getDriver();
 	    
 		//Seleciona formuario
 	    driver.findElement(By.xpath("//*[@text='Formulário']")).click();
 	}
 	
 	@After
-	private void tearDown() {
-		driver.quit();
+	public void tearDown() {
+		DriverFactory.killDriver();
 	}
 
 	@Test
