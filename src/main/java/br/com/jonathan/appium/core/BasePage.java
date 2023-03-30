@@ -4,9 +4,7 @@ import static br.com.jonathan.appium.core.DriverFactory.getDriver;
 
 import org.openqa.selenium.By;
 
-import junit.framework.Assert;
-
-public class DSL {
+public class BasePage {
 	public void escrever(By by, String texto) {
 		getDriver().findElement(by).sendKeys(texto);
 	}
