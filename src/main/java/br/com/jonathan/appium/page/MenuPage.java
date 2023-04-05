@@ -8,4 +8,7 @@ public class MenuPage extends BasePage{
 		clicarPorTexto("Formulário");
 	}
 
+	public void acessarSplash() {
+		clicarPorTexto("Splash");
+	}
 }
