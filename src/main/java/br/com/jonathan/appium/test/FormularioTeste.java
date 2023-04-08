@@ -82,4 +82,12 @@ public class FormularioTeste extends BaseTest {
 		
 		Assert.assertEquals("Nome: Jonathan", page.obterNomeCadastrado());
 	}
+	
+	@Test
+	public void deveAlterarData() {
+		page.clicarPorTexto("01/01/2000");
+		page.clicarPorTexto("20");
+		page.clicarPorTexto("OK");
+		Assert.assertTrue(page.ExisteElementoPorTexto("20/01/2000"));
+	}
 }
