@@ -7,7 +7,7 @@ import br.com.jonathan.appium.page.AccordionPage;
 import br.com.jonathan.appium.page.MenuPage;
 import junit.framework.Assert;
 
-public class Accordion extends BaseTest {
+public class AccordionTeste extends BaseTest {
 	
 	private MenuPage menu = new MenuPage();
 	private AccordionPage page = new AccordionPage();

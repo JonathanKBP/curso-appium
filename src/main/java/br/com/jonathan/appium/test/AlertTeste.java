@@ -1,8 +1,10 @@
 package br.com.jonathan.appium.test;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import br.com.jonathan.appium.core.BaseTest;
+import br.com.jonathan.appium.page.AlertaPage;
 import br.com.jonathan.appium.page.MenuPage;
 import junit.framework.Assert;
 
@@ -12,10 +14,13 @@ public class AlertTeste extends BaseTest{
 	
 	private AlertaPage page = new AlertaPage();
 	
+	@Before
+	public void setup() {
+		menu.acessarAlertas();
+	}
+	
 	@Test
 	public void deveConfirmarAlerta() {
-		menu.acessarAlertas();
-		
 		page.clicarAlertaConfirm();
 		
 		Assert.assertEquals("Info", page.obterTituloAlerta());
@@ -25,8 +30,16 @@ public class AlertTeste extends BaseTest{
 		
 		Assert.assertEquals("Confirmado", page.obterMensagemAlerta());
 		
-		page.sair();
+		page.sair();	
+	}
+	
+	@Test
+	public void deveClicarForaAlerta() {
+		page.clicarAlertaSimples();
 		
+		esperar(1000);
+		page.clicarForaCaixa();
 		
+		Assert.assertFalse(page.ExisteElementoPorTexto("Pode clicar no OK ou fora da caixa para sair"));
 	}
 }
