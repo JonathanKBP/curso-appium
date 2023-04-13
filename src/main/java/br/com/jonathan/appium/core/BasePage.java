@@ -65,4 +65,15 @@ public class BasePage {
 		
 		new TouchAction(getDriver()).longPress(PointOption.point(x, start_y)).moveTo(PointOption.point(x, end_y)).release().perform();
 	}
+	
+	public void swipe (double inicio, double fim) {
+		Dimension size = getDriver().manage().window().getSize();
+		
+		int y = size.height / 2;
+		
+		int start_x = (int) (size.width * inicio);
+		int end_x = (int) (size.width * fim);
+		
+		new TouchAction(getDriver()).longPress(PointOption.point(start_x, y)).moveTo(PointOption.point(end_x, y)).release().perform();
+	}
 }
