@@ -4,6 +4,8 @@ import static br.com.jonathan.appium.core.DriverFactory.getDriver;
 
 import java.util.List;
 
+import javax.swing.text.Element;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 
@@ -89,6 +91,15 @@ public class BasePage {
 		
 		int start_x = (int) (size.width * inicio);
 		int end_x = (int) (size.width * fim);
+		
+		new TouchAction(getDriver()).longPress(PointOption.point(start_x, y)).moveTo(PointOption.point(end_x, y)).release().perform();
+	}
+	
+	public void swipeElement (MobileElement element,double inicio, double fim) {
+		int y = element.getLocation().y + (element.getSize().height / 2);
+		
+		int start_x = (int) (element.getSize().width * inicio);
+		int end_x = (int) (element.getSize().width * fim);
 		
 		new TouchAction(getDriver()).longPress(PointOption.point(start_x, y)).moveTo(PointOption.point(end_x, y)).release().perform();
 	}

@@ -4,12 +4,10 @@ import static br.com.jonathan.appium.core.DriverFactory.getDriver;
 
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import br.com.jonathan.appium.core.BaseTest;
-import br.com.jonathan.appium.core.DriverFactory;
 import br.com.jonathan.appium.page.MenuPage;
 import junit.framework.Assert;
 
