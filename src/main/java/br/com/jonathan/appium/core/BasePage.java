@@ -55,6 +55,14 @@ public class BasePage {
 		new TouchAction(getDriver()).tap(PointOption.point(x, y)).perform();
 	}
 	
+	public void scrollDown() {
+		scroll(0.9, 0.1);
+	}
+	
+	public void scrollUp() {
+		scroll(0.1, 0.9);
+	}
+	
 	public void scroll (double inicio, double fim) {
 		Dimension size = getDriver().manage().window().getSize();
 		
@@ -64,6 +72,14 @@ public class BasePage {
 		int end_y = (int) (size.height * fim);
 		
 		new TouchAction(getDriver()).longPress(PointOption.point(x, start_y)).moveTo(PointOption.point(x, end_y)).release().perform();
+	}
+	
+	public void swipeLeft () {
+		swipe(0.1, 0.9);
+	}
+	
+	public void swipeRigth () {
+		swipe(0.9, 0.1);
 	}
 	
 	public void swipe (double inicio, double fim) {

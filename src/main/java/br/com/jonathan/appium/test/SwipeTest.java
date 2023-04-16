@@ -16,7 +16,7 @@ public class SwipeTest extends BaseTest {
 		
 		Assert.assertTrue(menu.ExisteElementoPorTexto("a esquerda"));
 		
-		menu.swipe(0.9, 0.1);
+		menu.swipeRigth();
 		
 		Assert.assertTrue(menu.ExisteElementoPorTexto("E veja se"));
 		
@@ -24,7 +24,7 @@ public class SwipeTest extends BaseTest {
 		
 		Assert.assertTrue(menu.ExisteElementoPorTexto("Chegar até o fim!"));
 			
-		menu.swipe(0.1, 0.9);
+		menu.swipeLeft();
 		
 		menu.clicarPorTexto("‹");
 		
