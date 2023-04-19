@@ -44,4 +44,11 @@ public class MenuPage extends BasePage{
 		scrollDown();
 		clicarPorTexto("Swipe List");
 	}
+	
+	public void acessarDragNDrop() {
+		WebDriverWait wait = new WebDriverWait(getDriver(), 10);
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@text='Formulário']")));	
+		scrollDown();
+		clicarPorTexto("Drag and drop");
+	}
 }
