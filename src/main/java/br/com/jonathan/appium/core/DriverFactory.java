@@ -27,6 +27,7 @@ public class DriverFactory {
 	    desiredCapabilities.setCapability("appium:automationName", "uiautomator2");
 	    //desiredCapabilities.setCapability("appium:appPackage", "com.google.android.calculator");
 	    //desiredCapabilities.setCapability("appium:appActivity", "com.android.calculator2.Calculator");
+//	    desiredCapabilities.setCapability(MobileCapabilityType.APP, "\\Users\\Jonathan\\eclipse-workspace\\CursoAppium\\src\\main\\resources\\CTAppium_1_2.apk");
 	    desiredCapabilities.setCapability(MobileCapabilityType.APP, "\\Users\\Jonathan\\eclipse-workspace\\CursoAppium\\src\\main\\resources\\CTAppium_2_0.apk");
 	    
 	    try {
