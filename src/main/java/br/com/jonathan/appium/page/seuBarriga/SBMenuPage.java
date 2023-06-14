@@ -7,4 +7,8 @@ public class SBMenuPage extends BasePage {
 	public void acessarContas() {
 		clicarPorTexto("CONTAS");
 	}
+	
+	public void acessarMovimentacoes(){
+		clicarPorTexto("MOV...");
+	}
 }
