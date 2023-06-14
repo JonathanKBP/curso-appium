@@ -11,6 +11,8 @@ import org.openqa.selenium.Dimension;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
+import io.appium.java_client.android.AndroidTouchAction;
+import io.appium.java_client.touch.offset.ElementOption;
 import io.appium.java_client.touch.offset.PointOption;
 
 public class BasePage {
@@ -39,7 +41,7 @@ public class BasePage {
 		return getDriver().findElement(by).getAttribute("checked").equals("true");
 	}
 	
-	public boolean ExisteElementoPorTexto(String texto) {
+	public boolean existeElementoPorTexto(String texto) {
 		 List<MobileElement> elementos = getDriver().findElements(By.xpath("//*[@text='"+texto+"']"));
 		 
 		 return elementos.size() > 0;
@@ -102,5 +104,9 @@ public class BasePage {
 		int end_x = (int) (element.getSize().width * fim);
 		
 		new TouchAction(getDriver()).longPress(PointOption.point(start_x, y)).moveTo(PointOption.point(end_x, y)).release().perform();
+	}
+	
+	public void cliqueLongo(By by) {
+		new AndroidTouchAction(getDriver()).longPress(ElementOption.element(getDriver().findElement(by))).perform();
 	}
 }

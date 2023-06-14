@@ -89,7 +89,7 @@ public class FormularioTeste extends BaseTest {
 		page.clicarPorTexto("01/01/2000");
 		page.clicarPorTexto("20");
 		page.clicarPorTexto("OK");
-		Assert.assertTrue(page.ExisteElementoPorTexto("20/01/2000"));
+		Assert.assertTrue(page.existeElementoPorTexto("20/01/2000"));
 	}
 	
 	@Test
@@ -98,7 +98,7 @@ public class FormularioTeste extends BaseTest {
 		page.clicar(MobileBy.AccessibilityId("10"));
 		page.clicar(MobileBy.AccessibilityId("40"));
 		page.clicarPorTexto("OK");
-		Assert.assertTrue(page.ExisteElementoPorTexto("10:40"));
+		Assert.assertTrue(page.existeElementoPorTexto("10:40"));
 	}
 	
 	@Test

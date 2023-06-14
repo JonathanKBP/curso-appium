@@ -20,16 +20,16 @@ public class SwipeElementTest extends BaseTest {
 		
 		page.clicarBotaoMais();
 		
-		Assert.assertTrue(page.ExisteElementoPorTexto("Opção 1 (+)"));
+		Assert.assertTrue(page.existeElementoPorTexto("Opção 1 (+)"));
 		
 		page.swipeElementRight("Opção 4");
 		
 		page.clicarPorTexto("(-)");
 		
-		Assert.assertTrue(page.ExisteElementoPorTexto("Opção 4 (-)"));
+		Assert.assertTrue(page.existeElementoPorTexto("Opção 4 (-)"));
 		
 		page.swipeElementLeft("Opção 5 (-)");
 		
-		Assert.assertTrue(page.ExisteElementoPorTexto("Opção 5"));
+		Assert.assertTrue(page.existeElementoPorTexto("Opção 5"));
 	}
 }

@@ -20,6 +20,6 @@ public class SplashTeste extends BaseTest {
 		
 		page.aguardarSplashSumir();
 		
-		Assert.assertTrue(page.ExisteElementoPorTexto("Formulário"));
+		Assert.assertTrue(page.existeElementoPorTexto("Formulário"));
 	}
 }

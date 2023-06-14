@@ -32,6 +32,21 @@ public class SBTeste extends BaseTest {
 		
 		contas.salvar();
 		
-		Assert.assertTrue(contas.ExisteElementoPorTexto("Conta adicionada com sucesso"));
+		Assert.assertTrue(contas.existeElementoPorTexto("Conta adicionada com sucesso"));
+	}
+	
+	@Test
+	public void deveExcluirConta(){
+		// entrar em contas
+		menuSB.acessarContas();
+		
+		//clique longo na conta
+		contas.selecionarConta("Conta de Teste");
+		
+		//ecluir
+		contas.excluir();
+		
+		//verificar mensagem
+		Assert.assertTrue(contas.existeElementoPorTexto("Conta excluída com sucesso"));
 	}
 }

@@ -13,7 +13,7 @@ import br.com.jonathan.appium.core.BasePage;
 public class SplashPage extends BasePage {
 	
 	public boolean isTelaSplashVisivel() {
-		return ExisteElementoPorTexto("Splash!");
+		return existeElementoPorTexto("Splash!");
 	}
 	
 	public void aguardarSplashSumir() {

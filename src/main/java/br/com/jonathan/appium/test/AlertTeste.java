@@ -40,6 +40,6 @@ public class AlertTeste extends BaseTest{
 		esperar(1000);
 		page.clicarForaCaixa();
 		
-		Assert.assertFalse(page.ExisteElementoPorTexto("Pode clicar no OK ou fora da caixa para sair"));
+		Assert.assertFalse(page.existeElementoPorTexto("Pode clicar no OK ou fora da caixa para sair"));
 	}
 }
