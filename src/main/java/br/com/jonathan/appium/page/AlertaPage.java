@@ -1,7 +1,5 @@
 package br.com.jonathan.appium.page;
 
-import org.openqa.selenium.By;
-
 import br.com.jonathan.appium.core.BasePage;
 
 public class AlertaPage extends BasePage {

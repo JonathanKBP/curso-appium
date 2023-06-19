@@ -5,7 +5,6 @@ import static br.com.jonathan.appium.core.DriverFactory.getDriver;
 import org.openqa.selenium.By;
 
 import br.com.jonathan.appium.core.BasePage;
-import br.com.jonathan.appium.core.DriverFactory;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 

@@ -6,7 +6,6 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 
-import br.com.jonathan.appium.core.DriverFactory;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.touch.LongPressOptions;
@@ -18,7 +17,7 @@ public class DragNDropPage {
 		MobileElement inicio = getDriver().findElement(By.xpath("//*[@text='"+origem+"']"));
 		MobileElement fim = getDriver().findElement(By.xpath("//*[@text='"+destino+"']"));
 		
-		new TouchAction(getDriver())
+		new TouchAction<>(getDriver())
 			.longPress(LongPressOptions.longPressOptions().withElement(ElementOption.element(inicio)))
 			.moveTo(PointOption.point(fim.getCenter()))
 			.release()
